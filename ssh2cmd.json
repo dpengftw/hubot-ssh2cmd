@@ -1,0 +1,18 @@
+{
+    "ls": { 
+        "server":        { 
+            "host":         "127.0.0.1",
+            "userName":     "username",
+            "privateKey":   "/home/user/.ssh/id_rsa"
+            },
+        "commands":      [ "ls -l" ]
+    },
+    "date": { 
+        "server":        { 
+            "host":         "127.0.0.1",
+            "userName":     "username",
+            "privateKey":   "/home/user/.ssh/id_rsa"
+            },
+        "commands":      [ "date" ]
+    }
+}

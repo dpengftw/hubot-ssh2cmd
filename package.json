@@ -1,0 +1,27 @@
+{
+  "name": "hubot-ssh2cmd",
+  "version": "0.1.0",
+  "description": "Hubot ssh2 command execution",
+  "main": "index.coffee",
+  "dependencies": {
+    "fs": "latest",
+    "ssh2shell": "^1.9.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jedioncrk/hubot-ssh2cmd.git"
+  },
+  "keywords": [
+    "hubot",
+    "ssh2"
+  ],
+  "author": "David Peng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jedioncrk/hubot-ssh2cmd/issues"
+  },
+  "homepage": "https://github.com/jedioncrk/hubot-ssh2cmd#readme"
+}
