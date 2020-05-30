@@ -18,7 +18,7 @@ ssh2cmd_cfg = process.env.HUBOT_SSH2CMD_CFG
 
 module.exports = (robot) ->
 
-  robot.respond /ssh2cmd (.+)/i, (msg) ->
+  robot.respond /ssh2cmd ([\w\-\_]+) (.+)/i, (msg) ->
 
     try
       config = fs.readFileSync ssh2cmd_cfg
@@ -32,6 +32,10 @@ module.exports = (robot) ->
           value.server.privateKey = require('fs').readFileSync(value.server.privateKey)
         catch
           msg.send "Unable to read file #{value.server.privateKey}"
+
+      # argument replacement
+      for key, value of value.commands
+        value = value.replace '$@', msg.match[2]
 
       if key == msg.match[1]
         # loop through config objects and make ssh calls

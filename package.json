@@ -1,6 +1,6 @@
 {
   "name": "hubot-ssh2cmd",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Hubot ssh2 command execution",
   "main": "index.coffee",
   "dependencies": {
@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/jedioncrk/hubot-ssh2cmd/issues"
   },
-  "homepage": "https://github.com/jedioncrk/hubot-ssh2cmd#readme"
+  "homepage": "https://github.com/jedioncrk/hubot-ssh2cmd#readme",
+  "devDependencies": {}
 }

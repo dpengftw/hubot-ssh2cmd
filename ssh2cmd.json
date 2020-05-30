@@ -3,16 +3,18 @@
         "server":        { 
             "host":         "127.0.0.1",
             "userName":     "username",
-            "privateKey":   "/home/user/.ssh/id_rsa"
+            "privateKey":   "/home/username/.ssh/id_rsa"
             },
-        "commands":      [ "ls -l" ]
+        "commands":      [ "ls -l" ],
+        "connectedMessage": "```"
     },
     "date": { 
         "server":        { 
             "host":         "127.0.0.1",
             "userName":     "username",
-            "privateKey":   "/home/user/.ssh/id_rsa"
+            "privateKey":   "/home/username/.ssh/id_rsa"
             },
-        "commands":      [ "date" ]
+        "commands":      [ "date", "ls $@" ],
+        "connectedMessage": "```"
     }
 }
