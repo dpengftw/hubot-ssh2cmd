@@ -18,8 +18,8 @@ ssh2cmd_cfg = process.env.HUBOT_SSH2CMD_CFG
 
 module.exports = (robot) ->
 
-  robot.respond /ssh2cmd ([\w\-\_]+) (.+)/i, (msg) ->
-
+  robot.respond /ssh2cmd ([\w\_\-]+)?\s?(.+)?/i, (msg) ->
+    console.log "responding to command"
     try
       config = fs.readFileSync ssh2cmd_cfg
       config_json = JSON.parse config
