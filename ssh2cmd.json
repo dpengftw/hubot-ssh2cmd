@@ -1,56 +1,20 @@
 {
-    "queuesize": {
-        "server":        {
-            "host":         "paobmail.qa.cashview.com",
-            "userName":     "centos",
-            "privateKey":   "/etc/hubot/config/paobmail_id_rsa"
-        },
-        "connectedMessage": "```",
-        "commands":      [ "/usr/sbin/postqueue -p | grep Kbytes" ]
+    "ls": { 
+        "server":        { 
+            "host":         "127.0.0.1",
+            "userName":     "username",
+            "privateKey":   "/home/username/.ssh/id_rsa"
+            },
+        "commands":      [ "ls -l" ],
+        "connectedMessage": "```"
     },
-    "discardslast10": {
-        "server":        {
-            "host":         "paobmail.qa.cashview.com",
-            "userName":     "centos",
-            "privateKey":   "/etc/hubot/config/paobmail_id_rsa"
-        },
-        "connectedMessage": "```",
-        "commands":      [ "sudo fgrep DISCARD /var/log/maillog | tail -10" ]
-    },
-    "discardlist": {
-        "server":        {
-            "host":         "paobmail.qa.cashview.com",
-            "userName":     "centos",
-            "privateKey":   "/etc/hubot/config/paobmail_id_rsa"
-        },
-        "connectedMessage": "```",
-        "commands":      [ "cat /etc/postfix/sender_access" ]
-    },
-    "sendertop": {
-        "server":        {
-            "host":         "paobmail.qa.cashview.com",
-            "userName":     "centos",
-            "privateKey":   "/etc/hubot/config/paobmail_id_rsa"
-        },
-        "connectedMessage": "```",
-        "commands":      [ "/usr/sbin/postqueue -p | grep -E 'Sun|Mon|Tue|Wed|Thu|Fri|Sat' | awk '{print $7}' | sort | uniq -c | sort -n" ]
-    },
-    "totop": {
-        "server":        {
-            "host":         "paobmail.qa.cashview.com",
-            "userName":     "centos",
-            "privateKey":   "/etc/hubot/config/paobmail_id_rsa"
-        },
-        "connectedMessage": "```",
-        "commands":      [ "/usr/sbin/postqueue -p | grep -E '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}\b' | grep -Ev 'Sun|Mon|Tue|Wed|Thu|Fri|Sat' | sort | uniq -c | sort -n" ]
-    },
-    "removeemails": {
-        "server":        {
-            "host":         "paobmail.qa.cashview.com",
-            "userName":     "centos",
-            "privateKey":   "/etc/hubot/config/paobmail_id_rsa"
-        },
-        "connectedMessage": "```",
-        "commands":      [ "/usr/sbin/postqueue -p | grep -E '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}\b' | grep -B1 $@ | grep -E 'Sun|Mon|Tue|Wed|Thu|Fri|Sat' | awk '{print $1}' | sed -e 's/*//' | sudo /usr/sbin/postsuper -d -", "echo done" ]
+    "date": { 
+        "server":        { 
+            "host":         "127.0.0.1",
+            "userName":     "username",
+            "privateKey":   "/home/username/.ssh/id_rsa"
+            },
+        "commands":      [ "date", "ls $@" ],
+        "connectedMessage": "```"
     }
 }
