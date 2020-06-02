@@ -32,12 +32,18 @@ module.exports = (robot) ->
         catch
           msg.send "Unable to read file #{value.server.privateKey}"
 
-      # argument replacement
-      for commandKey, commandValue of value.commands
-        commandValue = commandValue.replace '$@', msg.match[2]
-
       if key == msg.match[1]
+
+        # argument replacement
+        newCommands = []
+        for commandKey, commandValue of value.commands
+          newCommands.push commandValue.replace '$@', msg.match[2]
+
+        value.commands = newCommands
+
         # loop through config objects and make ssh calls
+        console.log "Openning connection to #{value.host}"
+        console.log "Running the commands #{value.commands}"
         SSH = new SSH2Shell(value)
 
         callback = (sessionText) ->

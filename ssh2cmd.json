@@ -2,19 +2,20 @@
     "ls": { 
         "server":        { 
             "host":         "127.0.0.1",
-            "userName":     "username",
-            "privateKey":   "/home/username/.ssh/id_rsa"
+            "userName":     "user",
+            "privateKey":   "/home/user/.ssh/id_rsa"
             },
-        "commands":      [ "ls -l" ],
-        "connectedMessage": "```"
+        "commands":      [ "ls -l $@" ],
+        "connectedMessage":    " ",
+        "readyMessage":        " ",
+        "closedMessage":       " "
     },
     "date": { 
         "server":        { 
             "host":         "127.0.0.1",
-            "userName":     "username",
-            "privateKey":   "/home/username/.ssh/id_rsa"
+            "userName":     "user",
+            "privateKey":   "/home/user/.ssh/id_rsa"
             },
-        "commands":      [ "date", "ls $@" ],
-        "connectedMessage": "```"
+        "commands":      [ "date" ]
     }
 }

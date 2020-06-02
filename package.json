@@ -1,6 +1,6 @@
 {
   "name": "hubot-ssh2cmd",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Hubot ssh2 command execution",
   "main": "index.coffee",
   "dependencies": {
