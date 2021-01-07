@@ -23,7 +23,7 @@ module.exports = (robot) ->
       config = fs.readFileSync ssh2cmd_cfg
       config_json = JSON.parse config
     catch
-      msg.send "Unable to read config file #{ssh2cmd_cfg} for ssh2cmd "
+      msg.send "Unable to read config file #{ssh2cmd_cfg} for ssh2cmd"
 
     for key, value of config_json
       if value.server.privateKey
@@ -44,6 +44,7 @@ module.exports = (robot) ->
         # loop through config objects and make ssh calls
         console.log "Openning connection to #{value.host}"
         console.log "Running the commands #{value.commands}"
+        msg.send "Running the command alias #{key}"
         SSH = new SSH2Shell(value)
 
         callback = (sessionText) ->
