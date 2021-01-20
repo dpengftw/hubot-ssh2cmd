@@ -42,7 +42,7 @@ module.exports = (robot) ->
         value.commands = newCommands
 
         # loop through config objects and make ssh calls
-        console.log "Openning connection to #{value.host}"
+        console.log "Openning connection to #{value.server.host}"
         console.log "Running the commands #{value.commands}"
         msg.send "Running the command alias #{key}"
         SSH = new SSH2Shell(value)
