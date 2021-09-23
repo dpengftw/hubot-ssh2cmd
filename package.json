@@ -1,11 +1,11 @@
 {
   "name": "hubot-ssh2cmd",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Hubot ssh2 command execution",
   "main": "index.coffee",
   "dependencies": {
     "fs": "latest",
-    "ssh2shell": "^1.9.3"
+    "ssh2shell": "^1.9.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
